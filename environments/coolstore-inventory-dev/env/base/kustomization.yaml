@@ -1,0 +1,3 @@
+resources:
+- coolstore-inventory-dev-environment.yaml
+- coolstore-inventory-dev-rolebinding.yaml
