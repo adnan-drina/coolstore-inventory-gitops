@@ -16,7 +16,7 @@ environments:
       source_url: https://github.com/adnan-drina/coolstore-inventory.git
       webhook:
         secret:
-          name: webhook-secret-coolstore-inventory-dev
+          name: webhook-secret-coolstore-inventory-dev-coolstore-inventory
           namespace: coolstore-inventory-cicd
   name: coolstore-inventory-dev
   pipelines:

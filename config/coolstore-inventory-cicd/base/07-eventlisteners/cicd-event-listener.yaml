@@ -40,7 +40,7 @@ spec:
       - name: secretRef
         value:
           secretKey: webhook-secret-key
-          secretName: webhook-secret-coolstore-inventory-dev
+          secretName: webhook-secret-coolstore-inventory-dev-coolstore-inventory
       ref:
         name: github
     - params:
