@@ -7,7 +7,7 @@ resources:
 - 03-tasks/set-commit-status-task.yaml
 - 04-pipelines/app-ci-pipeline.yaml
 - 04-pipelines/ci-dryrun-from-push-pipeline.yaml
-- 05-bindings/coolstore-inventory-dev-app-coolstore-inventory-coolstore-inventory-binding.yaml
+- 05-bindings/coolstore-inventory-binding.yaml
 - 05-bindings/github-push-binding.yaml
 - 06-templates/app-ci-build-from-push-template.yaml
 - 06-templates/ci-dryrun-from-push-template.yaml

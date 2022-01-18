@@ -2,7 +2,7 @@ apiVersion: triggers.tekton.dev/v1alpha1
 kind: TriggerBinding
 metadata:
   creationTimestamp: null
-  name: coolstore-inventory-dev-app-coolstore-inventory-coolstore-inventory-binding
+  name: coolstore-inventory-binding
   namespace: coolstore-inventory-cicd
 spec:
   params:

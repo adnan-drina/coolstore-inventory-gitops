@@ -33,7 +33,7 @@ spec:
     template:
       ref: ci-dryrun-from-push-template
   - bindings:
-    - ref: coolstore-inventory-dev-app-coolstore-inventory-coolstore-inventory-binding
+    - ref: coolstore-inventory-binding
     - ref: github-push-binding
     interceptors:
     - params:
