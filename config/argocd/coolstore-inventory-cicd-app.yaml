@@ -2,11 +2,11 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   creationTimestamp: null
-  name: argo-app
+  name: coolstore-inventory-cicd-app
   namespace: openshift-gitops
 spec:
   destination:
-    namespace: openshift-gitops
+    namespace: coolstore-inventory-cicd
     server: https://kubernetes.default.svc
   ignoreDifferences:
   - group: argoproj.io
@@ -31,7 +31,7 @@ spec:
     kind: Route
   project: default
   source:
-    path: config/argocd
+    path: config/coolstore-inventory-cicd/overlays
     repoURL: https://github.com/adnan-drina/coolstore-inventory-gitops.git
   syncPolicy:
     automated:

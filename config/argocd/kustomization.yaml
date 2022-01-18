@@ -1,6 +1,6 @@
 resources:
-- argo-app.yaml
-- cicd-app.yaml
-- coolstore-inventory-dev-app-coolstore-inventory-app.yaml
-- coolstore-inventory-dev-env-app.yaml
-- coolstore-inventory-stage-env-app.yaml
+- coolstore-inventory-argo-app.yaml
+- coolstore-inventory-cicd-app.yaml
+- coolstore-inventory-dev-app.yaml
+- coolstore-inventory-dev-env.yaml
+- coolstore-inventory-stage-env.yaml

@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     app.kubernetes.io/name: app-coolstore-inventory
-  name: coolstore-inventory-dev-app-coolstore-inventory
+  name: coolstore-inventory-dev-app
   namespace: openshift-gitops
 spec:
   destination:
