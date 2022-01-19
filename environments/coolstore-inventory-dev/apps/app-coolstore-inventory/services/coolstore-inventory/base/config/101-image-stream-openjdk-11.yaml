@@ -1,0 +1,7 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  name: openjdk-11
+  namespace: coolstore-inventory-dev
+spec:
+  dockerImageRepository: registry.access.redhat.com/ubi8/openjdk-11

@@ -2,8 +2,9 @@ apiVersion: build.openshift.io/v1
 kind: BuildConfig
 metadata:
   annotations:
-    app.quarkus.io/build-timestamp: ""
-    app.quarkus.io/commit-id: ""
+    app.openshift.io/connects-to: inventory-database
+    app.openshift.io/vcs-ref: main
+    app.openshift.io/vcs-uri: https://github.com/adnan-drina/coolstore-inventory.git
   labels:
     app.kubernetes.io/name: inventory
     app.kubernetes.io/part-of: coolstore-inventory
@@ -12,13 +13,10 @@ metadata:
   name: inventory
   namespace: coolstore-inventory-dev
 spec:
-  nodeSelector: null
   output:
     to:
       kind: ImageStreamTag
-      name: inventory:1.0-SNAPSHOT
-  postCommit: {}
-  resources: {}
+      name: latest
   runPolicy: Serial
   source:
     dockerfile: "####\n# This Dockerfile is used in order to build a container that
@@ -50,6 +48,3 @@ spec:
     type: Dockerfile
   strategy:
     dockerStrategy: {}
-    type: Docker
-status:
-  lastVersion: 1
