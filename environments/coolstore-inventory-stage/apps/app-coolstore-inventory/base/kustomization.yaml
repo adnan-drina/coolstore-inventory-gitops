@@ -1,3 +1,2 @@
 bases:
 - ../services/coolstore-inventory
-- ../services/inventory-database

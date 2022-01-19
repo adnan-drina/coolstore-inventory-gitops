@@ -1,0 +1,103 @@
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  annotations:
+    template.alpha.openshift.io/wait-for-ready: "true"
+  labels:
+    app.kubernetes.io/name: inventroy-database
+    app.kubernetes.io/part-of: coolstore-inventory
+    app.openshift.io/runtime: postgresql
+    template: postgresql-ephemeral-template
+  name: inventory-database
+  namespace: coolstore-inventory-dev
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    name: inventory-database
+  strategy:
+    activeDeadlineSeconds: 21600
+    recreateParams:
+      timeoutSeconds: 600
+    resources: {}
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        name: inventory-database
+    spec:
+      containers:
+      - env:
+        - name: POSTGRESQL_USER
+          valueFrom:
+            secretKeyRef:
+              key: database-user
+              name: inventory-database
+        - name: POSTGRESQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: database-password
+              name: inventory-database
+        - name: POSTGRESQL_DATABASE
+          valueFrom:
+            secretKeyRef:
+              key: database-name
+              name: inventory-database
+        image: image-registry.openshift-image-registry.svc:5000/openshift/postgresql@sha256:c51c2456d92ce71905d72088fa14379eb27ec123860bc3b0d4564b7221eb9ca9
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          exec:
+            command:
+            - /usr/libexec/check-container
+            - --live
+          failureThreshold: 3
+          initialDelaySeconds: 120
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 10
+        name: postgresql
+        ports:
+        - containerPort: 5432
+          protocol: TCP
+        readinessProbe:
+          exec:
+            command:
+            - /usr/libexec/check-container
+          failureThreshold: 3
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        resources:
+          limits:
+            memory: 512Mi
+        securityContext:
+          capabilities: {}
+          privileged: false
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /var/lib/pgsql/data
+          name: inventory-database-data
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - emptyDir: {}
+        name: inventory-database-data
+  test: false
+  triggers:
+  - imageChangeParams:
+      automatic: true
+      containerNames:
+      - postgresql
+      from:
+        kind: ImageStreamTag
+        name: postgresql:10-el8
+        namespace: openshift
+      lastTriggeredImage: image-registry.openshift-image-registry.svc:5000/openshift/postgresql@sha256:c51c2456d92ce71905d72088fa14379eb27ec123860bc3b0d4564b7221eb9ca9
+    type: ImageChange
+  - type: ConfigChange

@@ -1,0 +1,17 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  annotations:
+    app.openshift.io/vcs-url: https://github.com/adnan-drina/coolstore-inventory.git
+    app.quarkus.io/build-timestamp: ""
+    app.quarkus.io/commit-id: ""
+  labels:
+    app.kubernetes.io/name: inventory
+    app.kubernetes.io/part-of: coolstore-inventory
+    app.kubernetes.io/version: 1.0-SNAPSHOT
+    app.openshift.io/runtime: quarkus
+  name: inventory
+  namespace: coolstore-inventory-dev
+spec:
+  lookupPolicy:
+    local: false
