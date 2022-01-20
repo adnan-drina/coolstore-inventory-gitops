@@ -14,10 +14,10 @@ spec:
   source:
     path: environments/coolstore-inventory-dev/apps/app-coolstore-inventory/overlays
     repoURL: https://github.com/adnan-drina/coolstore-inventory-gitops.git
-#  syncPolicy:
-#    automated:
-#      prune: true
-#      selfHeal: true
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
 status:
   health: {}
   summary: {}
