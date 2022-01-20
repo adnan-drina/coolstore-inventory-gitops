@@ -79,19 +79,19 @@ spec:
       kind: Task
       name: maven
     runAfter:
-      - clone-source
+    - clone-source
     workspaces:
-      - name: source
-        workspace: shared-data
-      - name: maven-settings
-        workspace: maven-settings
+    - name: source
+      workspace: shared-data
+    - name: maven-settings
+      workspace: maven-settings
     params:
-      - name: GOALS
-        value:
-          - -DskipTests
-          - clean
-          - package
-          - -Dquarkus.kubernetes.deploy=false
+    - name: GOALS
+      value:
+      - -DskipTests
+      - clean
+      - package
+      - -Dquarkus.kubernetes.deploy=false
 
   - name: build-image
     params:
