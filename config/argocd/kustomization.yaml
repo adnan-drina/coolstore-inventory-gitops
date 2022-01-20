@@ -3,4 +3,5 @@ resources:
 - coolstore-inventory-cicd-app.yaml
 - coolstore-inventory-dev-app.yaml
 - coolstore-inventory-dev-env.yaml
+- coolstore-inventory-stage-app.yaml
 - coolstore-inventory-stage-env.yaml

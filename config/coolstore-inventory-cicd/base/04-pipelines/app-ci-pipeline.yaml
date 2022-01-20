@@ -82,6 +82,8 @@ spec:
         --label=io.openshift.build.commit.ref='$(params.GIT_REF)'
     - name: IMAGE
       value: $(params.IMAGE)
+    - name: DOCKERFILE
+      value: ./src/main/docker/Dockerfile.jvm
     runAfter:
     - clone-source
     taskRef:
