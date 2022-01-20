@@ -70,5 +70,5 @@ spec:
       - inventory
       from:
         kind: ImageStreamTag
-        name: latest
+        name: inventory:latest
     type: ImageChange

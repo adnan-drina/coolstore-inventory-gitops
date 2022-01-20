@@ -16,7 +16,7 @@ spec:
   output:
     to:
       kind: ImageStreamTag
-      name: latest
+      name: inventory:latest
   runPolicy: Serial
   source:
     dockerfile: "####\n# This Dockerfile is used in order to build a container that
