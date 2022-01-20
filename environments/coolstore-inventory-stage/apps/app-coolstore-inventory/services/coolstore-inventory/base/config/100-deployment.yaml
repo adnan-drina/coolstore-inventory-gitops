@@ -28,7 +28,7 @@ spec:
         app.kubernetes.io/part-of: coolstore-inventory
     spec:
       containers:
-      - image: quay.io/repository/adrina/coolstore-inventory:main-e3d6f36aea3b436921bfb66d35a1ed0802a7994e
+      - image: quay.io/adrina/coolstore-inventory:main-e3d6f36aea3b436921bfb66d35a1ed0802a7994e
         imagePullPolicy: Always
         name: inventory
         ports:
