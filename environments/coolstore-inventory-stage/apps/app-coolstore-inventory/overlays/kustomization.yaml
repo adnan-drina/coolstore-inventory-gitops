@@ -1,2 +1,4 @@
+namespace: coolstore-inventory-stage
+
 bases:
 - ../base
