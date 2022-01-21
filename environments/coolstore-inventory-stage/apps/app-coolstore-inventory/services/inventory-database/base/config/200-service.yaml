@@ -6,6 +6,7 @@ metadata:
   labels:
     template: postgresql-ephemeral-template
   name: inventory-database
+  namespace: coolstore-inventory-stage
 spec:
   ports:
     - name: postgresql
