@@ -1,2 +1,12 @@
 bases:
 - ./config
+
+commonLabels:
+  app.kubernetes.io/name: inventroy-database
+  app.kubernetes.io/part-of: coolstore-inventory
+  app.openshift.io/runtime: postgresql
+
+commonAnnotations:
+  app.openshift.io/connects-to: inventory-database
+  app.openshift.io/vcs-ref: main
+  app.openshift.io/vcs-uri: https://github.com/adnan-drina/coolstore-inventory.git
