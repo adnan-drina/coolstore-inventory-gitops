@@ -18,6 +18,12 @@ spec:
     name: io.openshift.build.commit.message
   - description: The git repository URL.
     name: gitrepositoryurl
+  - description: The git repository HTML_URL.
+    name: git.repository.html_url
+  - description: The location of the environment config manifests.
+    name: environmentConfig
+  - description: The name of the ArgoCd application.
+    name: argoApp
   - description: The repository name for this PullRequest.
     name: fullname
   - description: The repository to push built images to.

@@ -8,6 +8,10 @@ spec:
   params:
   - name: gitrepositoryurl
     value: $(body.repository.clone_url)
+  - name: git.repository.html_url
+    value: $(body.repository.html_url)
+  - name: name
+    value: $(body.repository.name)
   - name: fullname
     value: $(body.repository.full_name)
   - name: io.openshift.build.commit.ref
