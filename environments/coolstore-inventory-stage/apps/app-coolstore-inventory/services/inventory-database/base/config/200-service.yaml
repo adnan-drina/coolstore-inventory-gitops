@@ -5,7 +5,6 @@ metadata:
     template.openshift.io/expose-uri: postgres://{.spec.clusterIP}:{.spec.ports[?(.name=="postgresql")].port}
   labels:
     template: postgresql-ephemeral-template
-    foo: test
   name: inventory-database
 spec:
   ports:
