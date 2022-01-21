@@ -8,7 +8,7 @@ spec:
   template:
     spec:
       containers:
-      - image: quay.io/adrina/coolstore-inventory:main-02880fa32516986f97c410a52d81d31e187475f6
+      - image: quay.io/adrina/coolstore-inventory:main-85116f0778fdf66006ad2e99cfe63dd390dc6ed6
         imagePullPolicy: Always
         name: inventory
         ports:
