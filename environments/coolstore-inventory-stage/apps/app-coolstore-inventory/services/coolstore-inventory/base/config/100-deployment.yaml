@@ -4,15 +4,7 @@ metadata:
   creationTimestamp: null
   annotations:
     app.openshift.io/connects-to: inventory-database
-  labels:
-    app.kubernetes.io/name: inventory
-    app.kubernetes.io/component: inventory
-    app.kubernetes.io/instance: inventory
-    app.kubernetes.io/part-of: coolstore-inventory
-    app.kubernetes.io/version: 1.0.0-SNAPSHOT
-    app.openshift.io/runtime: spring
   name: inventory
-  namespace: coolstore-inventory-stage
 spec:
   replicas: 1
   selector:
