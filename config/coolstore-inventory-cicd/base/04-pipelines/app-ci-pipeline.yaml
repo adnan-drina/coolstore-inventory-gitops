@@ -91,8 +91,8 @@ spec:
       - -DskipTests
       - clean
       - package
-      - -Dquarkus.profile=prod
-      - -Dquarkus.kubernetes.deploy=false
+#      - -Dquarkus.profile=prod
+#      - -Dquarkus.kubernetes.deploy=false
 
   - name: build-image
     params:
