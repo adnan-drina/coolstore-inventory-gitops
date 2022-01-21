@@ -6,6 +6,7 @@ resources:
 - 03-tasks/deploy-from-source-task.yaml
 - 03-tasks/set-commit-status-task.yaml
 - 03-tasks/mvn-task.yaml
+- 03-tasks/update-deployment-manifest.yaml
 - 04-pipelines/app-ci-pipeline.yaml
 - 04-pipelines/ci-dryrun-from-push-pipeline.yaml
 - 05-bindings/coolstore-inventory-binding.yaml
@@ -15,3 +16,4 @@ resources:
 - 07-eventlisteners/cicd-event-listener.yaml
 - 08-routes/gitops-webhook-event-listener.yaml
 - 09-config-maps/maven-settings.yaml
+- 09-config-maps/argocd-env.yaml
