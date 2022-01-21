@@ -1,6 +1,2 @@
 bases:
 - ./config
-
-commonLabels:
-  app.kubernetes.io/name: inventroy-database
-  app.kubernetes.io/part-of: coolstore-inventory
