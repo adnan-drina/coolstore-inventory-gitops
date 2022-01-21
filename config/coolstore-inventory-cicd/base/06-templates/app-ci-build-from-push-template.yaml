@@ -40,6 +40,8 @@ spec:
         value: $(tt.params.gitrepositoryurl)
       - name: GITOPS_REPO
         value: $(tt.params.git.repository.html_url)-gitops.git
+      - name: ENV_CONFIG_LOCATION
+        value: $(tt.params.environmentConfig)
       - name: ARGO_APP_NAME
         value: $(tt.params.argoApp)
       - name: TLSVERIFY
