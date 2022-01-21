@@ -38,6 +38,10 @@ spec:
         value: $(tt.params.fullname)
       - name: GIT_REPO
         value: $(tt.params.gitrepositoryurl)
+      - name: GITOPS_REPO
+        value: $(tt.params.git.repository.html_url)-gitops.git
+      - name: ARGO_APP_NAME
+        value: $(tt.params.argoApp)
       - name: TLSVERIFY
         value: $(tt.params.tlsVerify)
       - name: BUILD_EXTRA_ARGS
