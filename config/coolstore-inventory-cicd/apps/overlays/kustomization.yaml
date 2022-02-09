@@ -1,0 +1,6 @@
+bases:
+- ../base
+commonLabels:
+  app.openshift.io/vcs-source: adnan-drina/coolstore-inventory-gitops
+  app.kubernetes.io/name: inventory
+  app.kubernetes.io/part-of: coolstore-inventory

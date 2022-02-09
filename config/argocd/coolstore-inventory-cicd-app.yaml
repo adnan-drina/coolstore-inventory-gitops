@@ -31,7 +31,7 @@ spec:
     kind: Route
   project: default
   source:
-    path: config/coolstore-inventory-cicd/overlays
+    path: config/coolstore-inventory-cicd/apps/overlays
     repoURL: https://github.com/adnan-drina/coolstore-inventory-gitops.git
   syncPolicy:
     automated:
