@@ -4,4 +4,4 @@ metadata:
   name: argocd-env
   namespace: coolstore-inventory-cicd
 data:
-  ARGOCD_SERVER: openshift-gitops-server-openshift-gitops.apps.cluster-gbrln.gbrln.sandbox1215.opentlc.com
+  ARGOCD_SERVER: openshift-gitops-server-openshift-gitops.apps.cluster-lvtgx.lvtgx.sandbox1743.opentlc.com
