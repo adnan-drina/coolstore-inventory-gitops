@@ -35,7 +35,7 @@ spec:
         set -e
 
         echo "updating $(workspaces.config-source.path)/$(inputs.params.environment) image to $(inputs.params.appImage)"
-        sed -i "s|quay.io/adrina/taxi:[a-zA-Z0-9.-]\\+|$(inputs.params.appImage)|g" 100-deployment.yaml
+        sed -i "s|quay.io/adrina/coolstore-inventory:[a-zA-Z0-9.-]\\+|$(inputs.params.appImage)|g" 100-deployment.yaml
 
     - name: commit-push-changes-gitops
       image: alpine/git:v2.26.2
