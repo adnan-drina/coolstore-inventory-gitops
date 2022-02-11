@@ -4,7 +4,7 @@ metadata:
   name: inventory-database-pvc
   labels:
     app.kubernetes.io/component: postgres
-    app.kubernetes.io/name: inventroy-database
+    app.kubernetes.io/name: inventory-database
     app.kubernetes.io/part-of: coolstore-inventory
     app.openshift.io/runtime: postgresql
 spec:

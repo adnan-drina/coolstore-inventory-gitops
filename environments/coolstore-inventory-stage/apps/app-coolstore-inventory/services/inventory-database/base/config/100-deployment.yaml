@@ -1,28 +1,28 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: inventroy-database
+  name: inventory-database
   labels:
-    app: inventroy-database
+    app: inventory-database
     component: postgresql
     app.kubernetes.io/component: postgresql
-    app.kubernetes.io/name: inventroy-database
+    app.kubernetes.io/name: inventory-database
     app.kubernetes.io/part-of: coolstore-inventory
     app.openshift.io/runtime: postgresql
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: inventroy-database
+      app: inventory-database
       component: postgresql
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: inventroy-database
+        app: inventory-database
         component: postgresql
         app.kubernetes.io/component: postgresql
-        app.kubernetes.io/name: inventroy-database
+        app.kubernetes.io/name: inventory-database
         app.kubernetes.io/part-of: coolstore-inventory
         app.openshift.io/runtime: postgresql
     spec:
@@ -53,7 +53,7 @@ spec:
             successThreshold: 1
             failureThreshold: 10
           terminationMessagePath: /dev/termination-log
-          name: inventroy-database
+          name: inventory-database
           livenessProbe:
             tcpSocket:
               port: 5432

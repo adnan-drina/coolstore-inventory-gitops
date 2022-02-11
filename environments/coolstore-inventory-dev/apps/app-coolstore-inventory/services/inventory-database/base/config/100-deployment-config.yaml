@@ -4,7 +4,7 @@ metadata:
   annotations:
     template.alpha.openshift.io/wait-for-ready: "true"
   labels:
-    app.kubernetes.io/name: inventroy-database
+    app.kubernetes.io/name: inventory-database
     app.kubernetes.io/part-of: coolstore-inventory
     app.openshift.io/runtime: postgresql
     template: postgresql-ephemeral-template
