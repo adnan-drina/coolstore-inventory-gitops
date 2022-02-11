@@ -1,3 +1,5 @@
 bases:
 - ../services/coolstore-inventory
 - ../services/inventory-database
+
+namespace: coolstore-inventory-stage
