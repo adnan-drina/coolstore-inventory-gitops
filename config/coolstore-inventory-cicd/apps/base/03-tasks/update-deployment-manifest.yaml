@@ -6,7 +6,7 @@ spec:
   params:
     - name: environment
     - name: appImage
-    - name: imageRego
+    - name: imageRepo
     - name: application-name
       description: name of the application to sync
     - name: revision
