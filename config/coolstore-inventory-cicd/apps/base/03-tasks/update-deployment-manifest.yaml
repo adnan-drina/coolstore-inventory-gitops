@@ -35,7 +35,7 @@ spec:
         #!/usr/bin/env sh
         set -e
 
-        echo "updating $(workspaces.config-source.path)/$(inputs.params.environment) image to $(inputs.params.appImage in repo $(inputs.params.imageRepo)"
+        echo "updating $(workspaces.config-source.path)/$(inputs.params.environment) image to $(inputs.params.appImage) in repo $(inputs.params.imageRepo)"
         sed -i "s|$(inputs.params.imageRepo):[a-zA-Z0-9.-]\\+|$(inputs.params.appImage)|g" 100-deployment.yaml)
 
     - name: commit-push-changes-gitops
