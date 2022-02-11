@@ -6,6 +6,7 @@ spec:
   params:
     - name: environment
     - name: appImage
+    - name: imageRego
     - name: application-name
       description: name of the application to sync
     - name: revision
@@ -35,7 +36,7 @@ spec:
         set -e
 
         echo "updating $(workspaces.config-source.path)/$(inputs.params.environment) image to $(inputs.params.appImage)"
-        sed -i "s|quay.io/adrina/coolstore-inventory:[a-zA-Z0-9.-]\\+|$(inputs.params.appImage)|g" 100-deployment.yaml
+        sed -i "s|$(inputs.params.imageRepo):[a-zA-Z0-9.-]\\+|$(inputs.params.appImage)|g" 100-deployment.yaml
 
     - name: commit-push-changes-gitops
       image: alpine/git:v2.26.2

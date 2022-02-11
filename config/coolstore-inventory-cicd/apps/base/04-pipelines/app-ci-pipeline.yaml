@@ -32,6 +32,8 @@ spec:
     type: string
   - name: IMAGE
     type: string
+  - name: IMAGE_REPO
+    type: string
   - name: GIT_REF
     type: string
   - name: COMMIT_DATE
@@ -144,6 +146,8 @@ spec:
     params:
     - name: environment
       value: $(params.ENV_CONFIG_LOCATION)
+    - name: imageRepo
+      value: $(params.IMAGE_REPO)
     - name: appImage
       value: $(params.IMAGE)
     - name: application-name
