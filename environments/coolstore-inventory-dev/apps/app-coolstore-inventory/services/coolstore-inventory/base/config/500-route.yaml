@@ -14,7 +14,7 @@ metadata:
   namespace: coolstore-inventory-dev
 spec:
   port:
-    targetPort: 8080
+    targetPort: web
   to:
     kind: Service
     name: inventory

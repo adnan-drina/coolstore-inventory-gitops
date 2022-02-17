@@ -1,5 +1,2 @@
 bases:
 - ./config
-
-commonLabels:
-  app.kubernetes.io/env: dev
