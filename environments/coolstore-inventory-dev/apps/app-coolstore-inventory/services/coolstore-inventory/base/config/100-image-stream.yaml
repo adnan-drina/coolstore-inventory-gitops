@@ -1,15 +1,6 @@
 apiVersion: image.openshift.io/v1
 kind: ImageStream
 metadata:
-  annotations:
-    app.openshift.io/connects-to: inventory-database
-    app.openshift.io/vcs-ref: main
-    app.openshift.io/vcs-uri: https://github.com/adnan-drina/coolstore-inventory.git
-  labels:
-    app.kubernetes.io/name: inventory
-    app.kubernetes.io/part-of: coolstore-inventory
-    app.kubernetes.io/version: 1.0-SNAPSHOT
-    app.openshift.io/runtime: quarkus
   name: inventory
   namespace: coolstore-inventory-dev
 spec:
