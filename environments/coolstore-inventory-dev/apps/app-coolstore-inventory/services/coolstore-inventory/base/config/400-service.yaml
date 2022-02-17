@@ -11,4 +11,6 @@ spec:
   - name: metrics
     port: 8080
     targetPort: 8080
+  selector:
+    deploymentconfig: inventory
   type: ClusterIP

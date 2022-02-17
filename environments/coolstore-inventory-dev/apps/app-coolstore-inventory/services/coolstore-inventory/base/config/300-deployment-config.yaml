@@ -15,7 +15,7 @@ spec:
   template:
     metadata:
       labels:
-        app.openshift.io/runtime: quarkus
+        deploymentconfig: inventory
       namespace: coolstore-inventory-dev
     spec:
       containers:
