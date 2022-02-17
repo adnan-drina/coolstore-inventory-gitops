@@ -10,14 +10,32 @@ spec:
   destination:
     namespace: coolstore-inventory-dev
     server: https://kubernetes.default.svc
+  ignoreDifferences:
+    - group: route.openshift.io
+      jsonPointers:
+        - /spec/host
+        - /status/ingress
+      kind: Route
+    - group: apps.openshift.io
+      kind: DeploymentConfig
+      jsonPointers:
+        - /spec/template/spec/containers/0/image
+        - /spec/triggers/0/imageChangeParams/lastTriggeredImage
+        - /spec/triggers/1/imageChangeParams/lastTriggeredImage
+        - /spec/triggers/2/imageChangeParams/lastTriggeredImage
+    - group: build.openshift.io
+      kind: BuildConfig
+      jsonPointers:
+        - /spec/triggers
+        - /status
   project: default
   source:
     path: environments/coolstore-inventory-dev/apps/app-coolstore-inventory/overlays
     repoURL: https://github.com/adnan-drina/coolstore-inventory-gitops.git
-#  syncPolicy:
-#    automated:
-#      prune: true
-#      selfHeal: true
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
 status:
   health: {}
   summary: {}
