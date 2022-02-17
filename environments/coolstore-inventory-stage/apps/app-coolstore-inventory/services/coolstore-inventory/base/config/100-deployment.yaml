@@ -14,9 +14,45 @@ spec:
   template:
     spec:
       containers:
+      - env:
+        - name: JAVA_OPTS_APPEND
+          value: '-Dquarkus.profile=openshift'
+        - name: DATASOURCE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: coolstore-inventory-config
+              key: DATASOURCE_URL
+        - name: DATASOURCE_USERNAME
+          valueFrom:
+            configMapKeyRef:
+              name: coolstore-inventory-config
+              key: DATASOURCE_USERNAME
+        - name: DATASOURCE_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              name: coolstore-inventory-config
+              key: DATASOURCE_PASSWORD
       - image: quay.io/adrina/coolstore-inventory:main-bd84642e8b985290b56573a4615e5e0ae3f568fe
         imagePullPolicy: Always
         name: inventory
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /q/health/live
+            port: 8080
+            scheme: HTTP
+          periodSeconds: 30
+          successThreshold: 1
+          timeoutSeconds: 10
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /q/health/ready
+            port: 8080
+            scheme: HTTP
+          periodSeconds: 30
+          successThreshold: 1
+          timeoutSeconds: 10
         ports:
         - containerPort: 8080
         resources: {}

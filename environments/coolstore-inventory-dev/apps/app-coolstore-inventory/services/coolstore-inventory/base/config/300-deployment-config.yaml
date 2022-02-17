@@ -34,6 +34,8 @@ spec:
     spec:
       containers:
       - env:
+        - name: JAVA_OPTS_APPEND
+          value: '-Dquarkus.profile=openshift-dev'
         - name: KUBERNETES_NAMESPACE
           valueFrom:
             fieldRef:
