@@ -32,7 +32,7 @@ spec:
             configMapKeyRef:
               name: coolstore-inventory-config
               key: DATASOURCE_PASSWORD
-      - image: quay.io/adrina/coolstore-inventory:main-bd84642e8b985290b56573a4615e5e0ae3f568fe
+      - image: quay.io/adrina/coolstore-inventory:main-8682df05e7d71ea2744eb8b4bf05f5fb90e95272
         imagePullPolicy: Always
         name: inventory
         livenessProbe:
