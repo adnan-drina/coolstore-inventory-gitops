@@ -1,6 +1,10 @@
 apiVersion: build.openshift.io/v1
 kind: BuildConfig
 metadata:
+  labels:
+    app.kubernetes.io/name: inventory
+    app.kubernetes.io/part-of: coolstore-inventory
+    app.kubernetes.io/component: quarkus-service
   name: inventory
   namespace: coolstore-inventory-dev
 spec:
