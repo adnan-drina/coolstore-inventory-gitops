@@ -12,6 +12,8 @@ spec:
   replicas: 1
   strategy: {}
   template:
+    metadata:
+      namespace: coolstore-inventory-stage
     spec:
       containers:
         - name: inventory
