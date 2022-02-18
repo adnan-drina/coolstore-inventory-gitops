@@ -2,6 +2,6 @@ bases:
 - ./config
 
 commonLabels:
+  app.kubernetes.io/component: quarkus-service
   app.kubernetes.io/name: inventory
   app.kubernetes.io/part-of: coolstore-inventory
-  app.openshift.io/runtime: quarkus
