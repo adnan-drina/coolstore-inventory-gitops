@@ -13,3 +13,4 @@ resources:
 - 08-routes/gitops-webhook-event-listener.yaml
 - 09-config-maps/maven-settings.yaml
 - 09-config-maps/argocd-env.yaml
+- 10-storage/persistance-volume-claim.yaml
