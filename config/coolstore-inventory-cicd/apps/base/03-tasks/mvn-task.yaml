@@ -53,6 +53,8 @@ spec:
       name: source
     - description: The workspace consisting of the custom maven settings provided by the user.
       name: maven-settings
+    - description: The workspace consisting of local maven repository
+      name: maven-repo
   steps:
     - image: 'registry.access.redhat.com/ubi8/ubi-minimal:latest'
       name: mvn-settings
@@ -116,7 +118,8 @@ spec:
           sed -i "s|<!-- ### mirrors from ENV ### -->|$xml|" $(workspaces.maven-settings.path)/settings.xml
         fi
     - args:
-        - -Dmaven.repo.local=$(workspaces.source.path)/.m2
+#        - -Dmaven.repo.local=$(workspaces.source.path)/.m2
+        - -Dmaven.repo.local=$(workspaces.maven-repo.path)/.m2
         - '-s'
         - $(workspaces.maven-settings.path)/settings.xml
         - $(params.GOALS)

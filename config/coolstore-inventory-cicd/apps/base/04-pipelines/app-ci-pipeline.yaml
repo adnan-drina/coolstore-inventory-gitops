@@ -93,6 +93,8 @@ spec:
       workspace: shared-data
     - name: maven-settings
       workspace: maven-settings
+    - name: maven-repo
+      workspace: local-maven-repo
     params:
     - name: GOALS
       value:
@@ -163,3 +165,5 @@ spec:
     name: shared-data
   - description: This workspace containes Maven settings.
     name: maven-settings
+  - description: This workspace containes local Maven repository
+    name: local-maven-repo

@@ -1,7 +1,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: coolstore-inventory-source-pvc
+  name: maven-repo-pvc
   namespace: coolstore-inventory-cicd
 spec:
   accessModes:
@@ -11,4 +11,3 @@ spec:
       storage: 1Gi
   storageClassName: gp2
   volumeMode: Filesystem
-#  persistentVolumeReclaimPolicy: Retain
