@@ -57,7 +57,7 @@ spec:
           ports:
             - containerPort: 8080
               protocol: TCP
-          image: quay.io/adrina/coolstore-inventory:main-876bc7f783e57e7ea70f291d636c8109644c6c62
+          image: quay.io/adrina/coolstore-inventory:main-c69072764ea16c806e2a4365ebfa153628c6848b
           imagePullPolicy: Always
       serviceAccountName: default
 status: {}
